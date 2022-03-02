@@ -1,0 +1,54 @@
+{% extends "Calendario/base_login.html" %}
+
+{% block content %}
+<h1 class="auth-title">Creacion de Cuenta.</h1>
+<p class="auth-subtitle mb-5">Completa los siguinetes campos.</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group position-relative has-icon-left mb-4">
+        {{ form.username }}
+        <div class="form-control-icon">
+            <i class="bi bi-person"></i>
+        </div>
+    </div>
+    <div class="form-group position-relative has-icon-left mb-4">
+        {{ form.email }}
+        <div class="form-control-icon">
+            <i class="bi bi-envelope"></i>
+        </div>
+    </div>
+    <div class="form-group position-relative has-icon-left mb-4">
+        {{ form.password1 }}
+        <div class="form-control-icon">
+            <i class="bi bi-shield-lock"></i>
+        </div>
+    </div>
+    <div class="form-group position-relative has-icon-left mb-4">
+        {{ form.password2 }}
+        <div class="form-control-icon">
+            <i class="bi bi-shield-lock"></i>
+        </div>
+    </div>
+
+    <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Registrar</button>
+</form>
+<div class="text-center mt-5 text-lg fs-4">
+    {% if msg %}
+    <h4 class="fw-300 c-grey-900 mB-40">{{ msg | safe }}</h4>
+{% else %}
+    <p class="fw-300 c-grey-900 mB-40">
+      Llene todos los campos 
+    </p>
+{% endif %}
+
+</div>
+</div>
+</div>
+<div class="col-lg-7 d-none d-lg-block">
+    <div id="auth-right">
+
+    </div>
+</div>
+
+{% endblock content %}

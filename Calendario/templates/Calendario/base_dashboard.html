@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'Calendario/assets/css/bootstrap.css'%}">
+
+    <link rel="stylesheet" href="{% static 'Calendario/assets/vendors/iconly/bold.css'%}">
+
+    <link rel="stylesheet" href="{% static 'Calendario/assets/vendors/perfect-scrollbar/perfect-scrollbar.css'%}">
+    <link rel="stylesheet" href="{% static 'Calendario/assets/vendors/bootstrap-icons/bootstrap-icons.css'%}">
+    <link rel="stylesheet" href="{% static 'Calendario/assets/css/app.css'%}">
+    <link rel="shortcut icon" href="{% static 'Calendario/assets/images/favicon.svg'%}" type="image/x-icon">
+
+    <!-- aqui datepicker -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- XDSoft DateTimePicker -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"
+        integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"
+        integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+
+
+        
+  <!-- Fengyuan Chen's Datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+
+
+
+  <!-- nuevo css -->
+  <link href="{% static 'Calendario/assets/css/styles.css'%}" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="{% url 'dashboard'%}"><center><img src="{% static 'Calendario/assets/images/logo/logo.png'%}" alt="Logo" style="width: 200px;max-width: 100%;height: auto;vertical-align: middle;" cente></a></center>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title">Menu</li>
+                        {% if active == 1 %}
+                        <li class="sidebar-item active ">
+                            {%endif%}
+                            <a href="{% url 'dashboard'%}" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Calendario</span>
+                            </a>
+                        </li>
+                        {% if active == 2 %}
+                        <li class="sidebar-item active ">
+                            {%endif%}
+                            <a href="{% url 'list_anuncio'%}" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Anuncios</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                          
+                            <a href="{% url 'logout'%}" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Cerrar Sesion</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+
+
+            {% block heading%}
+
+            {% endblock %}
+
+
+
+            {% block content%}
+
+            {% endblock %}
+
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p>2022 &copy La Salesiana;</p>
+                    </div>
+                    <div class="float-end">
+                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                                href="">A.V</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="{% static 'Calendario/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js'%}"></script>
+    <script src="{% static 'Calendario/assets/js/bootstrap.bundle.min.js'%}"></script>
+
+    <script src="{% static 'Calendario/assets/vendors/apexcharts/apexcharts.js'%}"></script>
+    <script src="{% static 'Calendario/assets/js/pages/dashboard.js'%}"></script>
+
+    <script src="{% static 'Calendario/assets/js/mazer.js'%}"></script>
+
+
+    <!-- nuevos js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{% static 'Calendario/assets/js/scripts.js'%}"></script>
+    <script>
+        $(function () {
+            $("#datetimepicker").datetimepicker({
+                format: 'Y-m-d H:i',
+            });
+            $("#id_fecha_publicacion").datepicker({
+                format: 'yyyy/mm/dd',
+            });
+
+        });
+    </script>
+</body>
+
+</html>

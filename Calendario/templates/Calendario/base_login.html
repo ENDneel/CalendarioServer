@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Login - Calendario UPS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'Calendario/assets/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'Calendario/assets/vendors/bootstrap-icons/bootstrap-icons.css'%}">
+    <link rel="stylesheet" href="{% static 'Calendario/assets/css/app.css'%}">
+    <link rel="stylesheet" href="{% static 'Calendario/assets/css/pages/auth.css'%}">
+</head>
+
+<body>
+    <div id="auth">
+        
+<div class="row h-100">
+    <div class="col-lg-5 col-12">
+        <div id="auth-left">
+            <div class="auth-logo">
+                <a  href="{% url 'dashboard'%}"><center><img src="{% static 'Calendario/assets/images/logo/logo.png'%}" alt="Logo" style="width: 200px;max-width: 100%;height: auto;vertical-align: middle;" cente></a></center>
+            </div>
+
+
+            {% block content%}
+
+            {% endblock %}
+</div>
+
+    </div>
+</body>
+
+</html>

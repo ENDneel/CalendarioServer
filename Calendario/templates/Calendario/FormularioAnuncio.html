@@ -1,0 +1,70 @@
+{% extends "Calendario/base_dashboard.html" %}
+
+< {% block heading %} <div class="page-heading">
+    <h3>Caledario UPS</h3>
+    </div>
+    {% endblock%}
+
+    {% block content %}
+    <div class="page-content">
+        <section class="row">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Completar los datos</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                          
+                            {% csrf_token %}
+                            <div class="form-body" autocomplete="off">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group has-icon-left">
+                                            <label for="first-name-icon">Fecha de fecha_publicacion</label>
+                                            <div class="position-relative">
+                                                {{form.fecha_publicacion}}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-calendar-date"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 
+                                    <div class="col-12">
+                                        <div class="form-group has-icon-left">
+                                            <label for="mobile-id-icon">Descripcion</label>
+                                            <div class="position-relative">
+                                                {{form.descripcion}}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-card-text"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group has-icon-left">
+                                            <label for="password-id-icon">Imagen</label>
+                                            <div class="position-relative">
+                                                {{form.imagen}}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-card-image"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">Guardar</button>
+                                        <button type="reset" class="btn btn-light-secondary me-1 mb-1">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            </section>
+    </div>
+    {% endblock content%}
